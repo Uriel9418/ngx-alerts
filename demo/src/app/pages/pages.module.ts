@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { NgxAlertsModule } from '@ngx-plus/ngx-alerts'
+import { NgxFormsModule } from '@ngx-plus/ngx-forms'
 
 import { UiModule } from '../ui/ui.module'
 
@@ -14,6 +15,7 @@ import { UsageComponent } from './usage/usage.component'
   imports: [
     CommonModule,
     NgxAlertsModule,
+    NgxFormsModule,
     UiModule,
     PagesRoutingModule,
   ],

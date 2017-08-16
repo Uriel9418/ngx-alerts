@@ -4,7 +4,10 @@ import 'rxjs/add/operator/filter'
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
+  template: `
+    <router-outlet></router-outlet>
+    <ngx-alert-templates></ngx-alert-templates>
+  `,
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router) { }

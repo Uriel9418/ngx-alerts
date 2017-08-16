@@ -7,5 +7,5 @@ import { Component } from '@angular/core'
 })
 export class HeaderComponent {
   title = '@ngx-plus/ngx-alerts'
-  description = 'Advanced Angular Form Development'
+  description = 'Advanced Angular Alerts'
 }

@@ -10,6 +10,8 @@ import { PagesRoutingModule } from './pages-routing.module'
 import { DemoComponent } from './demo/demo.component'
 import { InstallationComponent } from './installation/installation.component'
 import { UsageComponent } from './usage/usage.component'
+import { DemoAlertsComponent } from './demo/demo-alerts.component';
+import { DemoToastsComponent } from './demo/demo-toasts.component'
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import { UsageComponent } from './usage/usage.component'
   ],
   declarations: [
     DemoComponent,
+    DemoAlertsComponent,
+    DemoToastsComponent,
     InstallationComponent,
     UsageComponent,
   ],

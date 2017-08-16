@@ -1,70 +1,28 @@
-import { Component, OnInit } from '@angular/core'
-import { NgxAlertsService } from '@ngx-plus/ngx-alerts'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'demo',
-  templateUrl: './demo.component.html',
+  template: `
+    <section>
+      <ui-header></ui-header>
+    </section>
+    <section>
+      <h2>Demo</h2>
+      <p class="lead">
+        Below are examples of what
+        <a href="https://github.com/ngx-plus/ngx-alerts"><b><code>@ngx-plus/ngx-alerts</code></b></a> can do. Follow the steps on the <b><a routerLink="/installation">Installation</a></b> page to get started.
+      </p>
+    </section>
+    <section>
+      <div class="row">
+        <div class="col-lg-6">
+          <demo-toasts></demo-toasts>
+        </div>
+        <div class="col-lg-6">
+          <demo-alerts></demo-alerts>
+        </div>
+      </div>
+    </section>
+  `,
 })
-export class DemoComponent implements OnInit {
-
-  public formConfig: any = {}
-  public item: any = {}
-
-  constructor(private alerts: NgxAlertsService) { }
-
-  ngOnInit() {
-    this.formConfig = {
-      title: 'Ngx-Forms',
-      icon: 'fa fa-tasks',
-      fields: {
-        input: 'input',
-        password: 'password',
-        email: 'email',
-        date: 'date',
-        textarea: 'textarea',
-        wysiwyg: 'wysiwyg',
-        select: {
-          type: 'select',
-          options: [
-            { label: 1, value: 1 },
-            { label: 2, value: 2 },
-            { label: 3, value: 3 },
-          ],
-        },
-      },
-      buttons: [{
-        label: 'Save',
-        type: 'submit',
-        classNames: 'btn-primary',
-        click: { type: 'submit' },
-      }, {
-        label: 'Cancel',
-        type: 'button',
-        classNames: 'btn-secondary',
-        click: { type: 'cancel' },
-      }],
-    }
-  }
-
-  handleAction(event) {
-    switch (event.type) {
-      case 'submit':
-        return this.alerts.toastSuccess('Save!', JSON.stringify(event.payload))
-      case 'cancel':
-        return this.alerts.toastError('Cancel!', JSON.stringify(event.payload))
-      case 'success':
-        return this.alerts.alertSuccess({ title: 'Success!' })
-      case 'error':
-        return this.alerts.alertError({ title: 'Error!' })
-      case 'warning':
-        return this.alerts.alertWarning({ title: 'Warning!' })
-      case 'info':
-        return this.alerts.alertInfo({ title: 'Info!' })
-      case 'question':
-        return this.alerts.alertQuestion({ title: 'Question!' })
-      default: {
-        return console.log('$event', event)
-      }
-    }
-  }
-}
+export class DemoComponent { }

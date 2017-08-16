@@ -1,0 +1,28 @@
+<section>
+  <h2>Installation</h2>
+  <p class="lead">Install with <b>npm</b></p>
+  <ui-card icon="fa fa-download"
+           title="Install"
+           [copy]="installCode">
+    <highlight [lang]="'ts'"
+               [code]="installCode">
+    </highlight>
+  </ui-card>
+</section>
+
+<section>
+  <h2>Setup</h2>
+  <p class="lead">Import <b><code>NgxAlertsModule</code></b> in the root module</p>
+  <ui-card icon="fa fa-code"
+           title="Code"
+           [copy]="importCode">
+    <highlight [lang]="'ts'"
+               [code]="importCode">
+    </highlight>
+  </ui-card>
+</section>
+
+<section>
+  <h2>Next</h2>
+  <p class="lead sub-section">Check out the <b><a routerLink="/usage">Usage</a></b> page to learn how to build a form.</p>
+</section>

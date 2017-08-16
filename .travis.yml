@@ -1,0 +1,40 @@
+notifications:
+  email: false
+
+sudo: required
+dist: trusty
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+language: node_js
+node_js:
+  - "8"
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install --quiet -g gulp-cli @angular/cli
+  - npm install
+  - npx lerna bootstrap
+
+script:
+  - gulp test:ci
+  - npm run build:demo
+
+after_success: gulp coveralls
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: npm run ghpages
+    on:
+      branch: master
+
+cache:
+  directories:
+    - node_modules

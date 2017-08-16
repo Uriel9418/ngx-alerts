@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const projectName = '@ngx-plus/ngx-forms'
+const projectName = '@ngx-plus/ngx-alerts'
 const projectRoot = '../..'
 const lerna = ['.', 'demo']
 

@@ -20,22 +20,22 @@ export class BadgesComponent {
       img: 'https://ngx-plus-slack.now.sh/badge.svg',
     },
     {
-      link: 'https://www.npmjs.com/package/@ngx-plus/ngx-forms',
+      link: 'https://www.npmjs.com/package/@ngx-plus/ngx-alerts',
       img:
-      'https://img.shields.io/npm/v/@ngx-plus/ngx-forms.svg?maxAge=2592000?style=plastic',
+      'https://img.shields.io/npm/v/@ngx-plus/ngx-alerts.svg?maxAge=2592000?style=plastic',
     },
     {
-      link: 'https://ngx-plus.github.io/ngx-forms/',
+      link: 'https://ngx-plus.github.io/ngx-alerts/',
       img: 'https://img.shields.io/badge/demo-online-61B5D9.svg',
     },
     {
-      link: 'https://travis-ci.org/ngx-plus/ngx-forms',
-      img: 'https://travis-ci.org/ngx-plus/ngx-forms.svg?branch=master',
+      link: 'https://travis-ci.org/ngx-plus/ngx-alerts',
+      img: 'https://travis-ci.org/ngx-plus/ngx-alerts.svg?branch=master',
     },
     {
-      link: 'https://coveralls.io/github/ngx-plus/ngx-forms?branch=master',
+      link: 'https://coveralls.io/github/ngx-plus/ngx-alerts?branch=master',
       img:
-      'https://coveralls.io/repos/github/ngx-plus/ngx-forms/badge.svg?branch=master',
+      'https://coveralls.io/repos/github/ngx-plus/ngx-alerts/badge.svg?branch=master',
     },
     {
       link: '#contributors',

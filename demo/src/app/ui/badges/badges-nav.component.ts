@@ -17,7 +17,7 @@ import { Component } from '@angular/core'
     <iframe allowtransparency="true"
             scrolling="no"
             frameborder="0"
-            src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2Fngx-plus%2Fngx-forms&amp;aria-label=Star%20ngx-plus%2Fngx-forms%20on%20GitHub&amp;data-text=Star&amp;data-size=large&amp;data-show-count=true"
+            src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2Fngx-plus%2Fngx-alerts&amp;aria-label=Star%20ngx-plus%2Fngx-alerts%20on%20GitHub&amp;data-text=Star&amp;data-size=large&amp;data-show-count=true"
             style="border: none; width: 113px; height: 28px; line-height: 28px;">
     </iframe>
   </div>

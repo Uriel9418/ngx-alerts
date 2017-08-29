@@ -257,7 +257,9 @@ gulp.task('bundle', () => {
         'rxjs/add/operator/first': 'Rx.Observable.prototype',
         'rxjs/add/operator/startWith': 'Rx.Observable.prototype',
         'rxjs/add/operator/switchMap': 'Rx.Observable.prototype',
-        'rxjs/Observable': 'Rx'
+        'rxjs/Observable': 'Rx',
+        'lodash': 'lodash',
+        'sweetalert2': 'sweetalert2',
     };
 
     const rollupOptions = {

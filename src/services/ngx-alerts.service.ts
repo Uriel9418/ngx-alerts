@@ -3,6 +3,12 @@ import { assign, noop } from 'lodash'
 import swal, { SweetAlertOptions } from 'sweetalert2'
 
 import { ToastyService, ToastyConfig } from 'ng2-toasty'
+import { Snotify, SnotifyConfig, SnotifyService } from 'ng-snotify'
+
+export interface NgxAlertsNotification extends SnotifyConfig {
+  body: string
+  title?: string
+}
 
 @Injectable()
 export class NgxAlertsService {
@@ -10,6 +16,7 @@ export class NgxAlertsService {
   constructor(
     private toastyService: ToastyService,
     private toastyConfig: ToastyConfig,
+    private notifyService: SnotifyService,
   ) {
     this.toastyConfig.limit = 10
     this.toastyConfig.theme = 'bootstrap'
@@ -55,6 +62,51 @@ export class NgxAlertsService {
       title,
       msg,
     })
+  }
+
+  private defaultNotify(type: string, config: NgxAlertsNotification) {
+    return this.notifyService[type](config.body, config.title || null, {
+      timeout: config.timeout || 3000,
+      showProgressBar: config.showProgressBar || true,
+      closeOnClick: config.closeOnClick || true,
+      pauseOnHover: config.pauseOnHover || true,
+      buttons: config.buttons,
+      placeholder: config.placeholder,
+      html: config.html || null,
+      position: config.position,
+    })
+  }
+
+  public notifySimple(config: NgxAlertsNotification) {
+    this.defaultNotify('simple', config)
+  }
+
+  public notifySuccess(config: NgxAlertsNotification) {
+    this.defaultNotify('success', config)
+  }
+
+  public notifyInfo(config: NgxAlertsNotification) {
+    this.defaultNotify('info', config)
+  }
+
+  public notifyWarning(config: NgxAlertsNotification) {
+    this.defaultNotify('warning', config)
+  }
+
+  public notifyError(config: NgxAlertsNotification) {
+    this.defaultNotify('error', config)
+  }
+
+  public notifyPrompt(config: NgxAlertsNotification) {
+    this.defaultNotify('prompt', config)
+  }
+
+  public notifyConfirm(config: NgxAlertsNotification) {
+    this.defaultNotify('confirm', config)
+  }
+
+  public notifyDismiss(toastId) {
+    this.notifyService.remove(toastId)
   }
 
   alert(options: any = {}, successCb = noop, closeCb = noop) {

@@ -49,6 +49,7 @@
     "watch": "npx gulp watch"
   },
   "dependencies": {
+    "ng-snotify": "^3.0.1",
     "ng2-toasty": "^4.0.3",
     "sweetalert2": "^6.6.8"
   },

@@ -4,6 +4,7 @@ import { ToastyService, ToastyModule } from 'ng2-toasty'
 
 import { NgxAlertsService } from './services'
 import { NgxAlertTemplatesComponent } from './components'
+import { SnotifyModule } from 'ng-snotify'
 
 const components = [
   NgxAlertTemplatesComponent
@@ -13,6 +14,7 @@ const components = [
   imports: [
     CommonModule,
     ToastyModule,
+    SnotifyModule.forRoot(),
   ],
   declarations: [
     ...components,

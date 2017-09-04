@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core'
 import { assign, noop } from 'lodash'
 import swal, { SweetAlertOptions } from 'sweetalert2'
 
-import { ToastyService, ToastyConfig } from 'ng2-toasty'
-import { Snotify, SnotifyConfig, SnotifyService } from 'ng-snotify'
+import { SnotifyConfig, SnotifyService } from 'ng-snotify'
 
 export interface NgxAlertsNotification extends SnotifyConfig {
   body: string
@@ -13,56 +12,7 @@ export interface NgxAlertsNotification extends SnotifyConfig {
 @Injectable()
 export class NgxAlertsService {
 
-  constructor(
-    private toastyService: ToastyService,
-    private toastyConfig: ToastyConfig,
-    private notifyService: SnotifyService,
-  ) {
-    this.toastyConfig.limit = 10
-    this.toastyConfig.theme = 'bootstrap'
-  }
-
-  toastDefault(title, msg) {
-    this.toastyService.default({
-      title,
-      msg,
-    })
-  }
-
-  toastError(title, msg) {
-    this.toastyService.error({
-      title,
-      msg,
-    })
-  }
-
-  toastInfo(title, msg) {
-    this.toastyService.info({
-      title,
-      msg,
-    })
-  }
-
-  toastSuccess(title, msg) {
-    this.toastyService.success({
-      title,
-      msg,
-    })
-  }
-
-  toastWait(title, msg) {
-    this.toastyService.wait({
-      title,
-      msg,
-    })
-  }
-
-  toastWarning(title, msg) {
-    this.toastyService.warning({
-      title,
-      msg,
-    })
-  }
+  constructor(private notifyService: SnotifyService) {}
 
   private defaultNotify(type: string, config: NgxAlertsNotification) {
     return this.notifyService[type](config.body, config.title || null, {

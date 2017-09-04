@@ -1,6 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { ToastyService, ToastyModule } from 'ng2-toasty'
 
 import { NgxAlertsService } from './services'
 import { NgxAlertTemplatesComponent } from './components'
@@ -13,7 +12,6 @@ const components = [
 @NgModule({
   imports: [
     CommonModule,
-    ToastyModule,
     SnotifyModule.forRoot(),
   ],
   declarations: [
@@ -21,7 +19,6 @@ const components = [
   ],
   exports: [
     ...components,
-    ToastyModule,
   ]
 })
 export class NgxAlertsModule {
@@ -30,7 +27,6 @@ export class NgxAlertsModule {
       ngModule: NgxAlertsModule,
       providers: [
         NgxAlertsService,
-        ToastyService,
       ]
     }
   }

@@ -11,6 +11,7 @@ import { DemoComponent } from './demo/demo.component'
 import { InstallationComponent } from './installation/installation.component'
 import { UsageComponent } from './usage/usage.component'
 import { DemoAlertsComponent } from './demo/demo-alerts.component';
+import { DemoNotifyComponent } from './demo/demo-notify.component'
 import { DemoToastsComponent } from './demo/demo-toasts.component'
 
 @NgModule({
@@ -24,6 +25,7 @@ import { DemoToastsComponent } from './demo/demo-toasts.component'
   declarations: [
     DemoComponent,
     DemoAlertsComponent,
+    DemoNotifyComponent,
     DemoToastsComponent,
     InstallationComponent,
     UsageComponent,

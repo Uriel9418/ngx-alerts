@@ -16,7 +16,7 @@ import { Component } from '@angular/core'
     <section>
       <div class="row">
         <div class="col-lg-6">
-          <demo-toasts></demo-toasts>
+          <demo-notify></demo-notify>
         </div>
         <div class="col-lg-6">
           <demo-alerts></demo-alerts>

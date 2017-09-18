@@ -260,6 +260,7 @@ gulp.task('bundle', () => {
         'rxjs/Observable': 'Rx',
         'lodash': 'lodash',
         'sweetalert2': 'sweetalert2',
+        'ng-snotify': 'ng-snotify',
     };
 
     const rollupOptions = {

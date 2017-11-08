@@ -5,28 +5,30 @@
   },
   "apps": [
     {
-      "root": "src",
-      "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "name": "demo",
+      "root": "apps/demo/src",
+      "outDir": "dist/apps/demo",
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "ngx",
-      "styles": [
-        "styles.scss"
-      ],
+      "test": "../../../test.js",
+      "tsconfig": "../../../tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": ["styles.scss"],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
+    },
+    {
+      "name": "ngx-alerts",
+      "root": "libs/ngx-alerts/src",
+      "test": "../../../test.js",
+      "appRoot": ""
     }
   ],
   "e2e": {
@@ -36,16 +38,13 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**"
+      "project": "./tsconfig.app.json"
     },
     {
-      "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**"
+      "project": "./tsconfig.spec.json"
     },
     {
-      "project": "e2e/tsconfig.e2e.json",
-      "exclude": "**/node_modules/**"
+      "project": "./tsconfig.e2e.json"
     }
   ],
   "test": {
@@ -54,6 +53,11 @@
     }
   },
   "defaults": {
+    "schematics": {
+      "collection": "@nrwl/schematics",
+      "postGenerate": "npm run format",
+      "newProject": ["app", "lib"]
+    },
     "styleExt": "scss",
     "component": {}
   }

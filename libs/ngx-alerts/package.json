@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ngx-plus/ngx-alerts",
+  "version": "0.2.0",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "externals": {
+        "lodash": "lodash"
+      }
+    },
+    "dest": "@ngx-plus/ngx-alerts"
+  }
+}

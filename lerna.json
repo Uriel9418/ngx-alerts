@@ -1,8 +1,5 @@
 {
-  "lerna": "2.0.0",
-  "packages": [
-    "demo/",
-    "."
-  ],
+  "lerna": "2.5.1",
+  "packages": ["@ngx-plus/*"],
   "version": "0.2.0"
 }

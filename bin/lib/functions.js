@@ -3,7 +3,7 @@ const path = require('path')
 
 const projectName = '@ngx-plus/ngx-alerts'
 const projectRoot = '../..'
-const lerna = ['.', 'demo']
+const lerna = ['.']
 
 /**
  * Synchronously check if path exists

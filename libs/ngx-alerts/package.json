@@ -8,6 +8,6 @@
         "lodash": "lodash"
       }
     },
-    "dest": "@ngx-plus/ngx-alerts"
+    "dest": "dist/libs/ngx-alerts"
   }
 }

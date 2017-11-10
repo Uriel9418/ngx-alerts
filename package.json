@@ -33,7 +33,7 @@
     "ng": "ng",
     "now-build": "npm run build:demo",
     "now-start": "npx serve demo/dist",
-    "postbuild:libs": "cpx libs/ngx-alerts/src/css/**/*.css @ngx-plus/ngx-alerts/css",
+    "postbuild:libs": "cpx libs/ngx-alerts/src/css/**/*.css dist/libs/ngx-alerts/css",
     "precommit": "lint-staged",
     "preghpages": "ng build --prod --base-href $BASE_HREF",
     "start": "ng serve",

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { NgxAlertsModule } from '@ngx-plus/ngx-alerts'
 import { NgxFormsModule } from '@ngx-plus/ngx-forms'
 
-import { UiModule } from '../ui/ui.module'
+import { NgxAlertsModule } from '../../../../../libs/ngx-alerts'
 
+import { UiModule } from '../ui/ui.module'
 import { PagesRoutingModule } from './pages-routing.module'
 
 import { DemoComponent } from './demo/demo.component'

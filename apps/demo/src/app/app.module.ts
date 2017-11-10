@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
-import { NgxAlertsModule } from '@ngx-plus/ngx-alerts'
 import { NgxFormsModule } from '@ngx-plus/ngx-forms'
 
+import { NgxAlertsModule } from '../../../../libs/ngx-alerts'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { NgxAlertsService } from '@ngx-plus/ngx-alerts'
+import { NgxAlertsService } from '../../../../../../libs/ngx-alerts'
 
 @Component({
   selector: 'demo-notify',

@@ -31,10 +31,10 @@ export class DemoNotifyComponent implements OnInit {
       },
       buttons: [
         {
-          label: 'simple',
+          label: 'default',
           type: 'button',
-          classNames: 'btn-block btn-primary',
-          click: { type: 'simple' },
+          classNames: 'btn-block btn-secondary',
+          click: { type: 'default' },
         },
         {
           label: 'success',
@@ -49,6 +49,12 @@ export class DemoNotifyComponent implements OnInit {
           click: { type: 'info' },
         },
         {
+          label: 'wait',
+          type: 'button',
+          classNames: 'btn-block btn-primary',
+          click: { type: 'wait' },
+        },
+        {
           label: 'warning',
           type: 'button',
           classNames: 'btn-block btn-warning',
@@ -60,18 +66,18 @@ export class DemoNotifyComponent implements OnInit {
           classNames: 'btn-block btn-danger',
           click: { type: 'error' },
         },
-        {
-          label: 'prompt',
-          type: 'button',
-          classNames: 'btn-block btn-secondary',
-          click: { type: 'prompt' },
-        },
-        {
-          label: 'confirm',
-          type: 'button',
-          classNames: 'btn-block btn-dark',
-          click: { type: 'confirm' },
-        },
+        // {
+        //   label: 'prompt',
+        //   type: 'button',
+        //   classNames: 'btn-block btn-secondary',
+        //   click: { type: 'prompt' },
+        // },
+        // {
+        //   label: 'confirm',
+        //   type: 'button',
+        //   classNames: 'btn-block btn-dark',
+        //   click: { type: 'confirm' },
+        // },
       ],
     }
   }
@@ -83,8 +89,8 @@ export class DemoNotifyComponent implements OnInit {
     }
 
     switch (event.type) {
-      case 'simple':
-        return this.alerts.notifySimple(cfg)
+      case 'default':
+        return this.alerts.notifyDefault(cfg)
       case 'success':
         return this.alerts.notifySuccess(cfg)
       case 'error':
@@ -93,43 +99,45 @@ export class DemoNotifyComponent implements OnInit {
         return this.alerts.notifyInfo(cfg)
       case 'warning':
         return this.alerts.notifyWarning(cfg)
-      case 'prompt':
-        const answerYes = (toastId, body) => {
-          this.alerts.notifySuccess({ title: 'Yes', body })
-          this.alerts.notifyDismiss(toastId)
-        }
-        const answerNo = (toastId, body) => {
-          this.alerts.notifyError({ title: 'No', body })
-          this.alerts.notifyDismiss(toastId)
-        }
-        const prompt = {
-          buttons: [{ text: 'Yes', action: answerYes }, { text: 'No', action: answerNo }],
-          placeholder: 'Do you want to dismiss this prompt?',
-        }
-        return this.alerts.notifyPrompt(Object.assign(cfg, prompt))
-      case 'confirm':
-        const confirmYes = () => this.alerts.notifySuccess({ body: 'Yes' })
-        const confirmNo = () => this.alerts.notifyError({ body: 'No' })
-        const confirmLater = toastId => {
-          this.alerts.notifyError({ body: 'Later' })
-          this.alerts.notifyDismiss(toastId)
-        }
-        const confirmClose = toastId => {
-          this.alerts.notifyError({ body: 'Close' })
-          this.alerts.notifyDismiss(toastId)
-        }
-        const confirm = {
-          closeOnClick: false,
-          buttons: [
-            { text: 'Yes', action: confirmYes, bold: true },
-            { text: 'No', action: confirmNo },
-            { text: 'Later', action: confirmLater },
-            { text: 'Close', action: confirmClose, bold: true },
-          ],
-        }
-        return this.alerts.notifyConfirm(Object.assign(cfg, confirm))
+      case 'wait':
+        return this.alerts.notifyWait(cfg)
+      // case 'prompt':
+      //   const answerYes = (toastId, body) => {
+      //     this.alerts.notifySuccess({ title: 'Yes', body })
+      //     this.alerts.notifyDismiss(toastId)
+      //   }
+      //   const answerNo = (toastId, body) => {
+      //     this.alerts.notifyError({ title: 'No', body })
+      //     this.alerts.notifyDismiss(toastId)
+      //   }
+      //   const prompt = {
+      //     buttons: [{ text: 'Yes', action: answerYes }, { text: 'No', action: answerNo }],
+      //     placeholder: 'Do you want to dismiss this prompt?',
+      //   }
+      //   return this.alerts.notifyPrompt(Object.assign(cfg, prompt))
+      // case 'confirm':
+      //   const confirmYes = () => this.alerts.notifySuccess({ body: 'Yes' })
+      //   const confirmNo = () => this.alerts.notifyError({ body: 'No' })
+      //   const confirmLater = toastId => {
+      //     this.alerts.notifyError({ body: 'Later' })
+      //     this.alerts.notifyDismiss(toastId)
+      //   }
+      //   const confirmClose = toastId => {
+      //     this.alerts.notifyError({ body: 'Close' })
+      //     this.alerts.notifyDismiss(toastId)
+      //   }
+      //   const confirm = {
+      //     closeOnClick: false,
+      //     buttons: [
+      //       { text: 'Yes', action: confirmYes, bold: true },
+      //       { text: 'No', action: confirmNo },
+      //       { text: 'Later', action: confirmLater },
+      //       { text: 'Close', action: confirmClose, bold: true },
+      //     ],
+      //   }
+      //   return this.alerts.notifyConfirm(Object.assign(cfg, confirm))
       default: {
-        return console.log('Unknown event', event)
+        return console.log('unknown event', event)
       }
     }
   }

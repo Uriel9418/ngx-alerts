@@ -22,7 +22,7 @@ export class NgxAlertsService {
       buttons: config.buttons,
       placeholder: config.placeholder,
       html: config.html || null,
-      position: config.position,
+      position: config.position || 'rightBottom',
     })
   }
 

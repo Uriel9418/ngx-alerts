@@ -1,98 +1,88 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { NgxAlertsService } from '../../../../../../libs/ngx-alerts'
 
 @Component({
   selector: 'demo-notify',
-  template: `<ngx-form [config]="formConfig" [item]="item" (action)="handleAction($event)"> </ngx-form>
+  template: `
+    <div class="card">
+      <div class="card-header"><i class="fa fa-comment"></i> Notifys</div>
+      <div class="card-body">
+        <div class="form-group">
+          <label class="form-control-label" for="title">Title</label>
+          <input class="form-control" [(ngModel)]="item.title" name="input" placeholder="Title" aria-describedby="Title" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="body">Body</label>
+          <input class="form-control" [(ngModel)]="item.body" name="input" placeholder="Body" aria-describedby="Body" type="text">
+        </div>
+      </div>
+      <div class="card-footer">
+        <button *ngFor="let button of buttons"
+                [class]="button.classNames"
+                (click)="handleAction({ type: button.type, payload: item })">{{button.label}}
+        </button>
+      </div>
+    </div>
 `,
 })
-export class DemoNotifyComponent implements OnInit {
-  public formConfig: any = {}
+export class DemoNotifyComponent {
   public item: any = {
     title: 'Notify Title',
     body: 'Notify Body',
   }
 
+  public buttons: any[] = [
+    {
+      label: 'simple',
+      classNames: 'btn btn-block btn-primary',
+      type: 'simple',
+    },
+    {
+      label: 'success',
+      classNames: 'btn btn-block btn-success',
+      type: 'success',
+    },
+    {
+      label: 'info',
+      classNames: 'btn btn-block btn-info',
+      type: 'info',
+    },
+    {
+      label: 'warning',
+      classNames: 'btn btn-block btn-warning',
+      type: 'warning',
+    },
+    {
+      label: 'error',
+      classNames: 'btn btn-block btn-danger',
+      type: 'error',
+    },
+    {
+      label: 'prompt',
+      classNames: 'btn btn-block btn-secondary',
+      type: 'prompt',
+    },
+    {
+      label: 'confirm',
+      classNames: 'btn btn-block btn-dark',
+      type: 'confirm',
+    },
+  ]
+
   constructor(private alerts: NgxAlertsService) {}
 
-  ngOnInit() {
-    this.formConfig = {
-      title: 'Notifys',
-      icon: 'fa fa-comment',
-      fields: {
-        title: {
-          type: 'input',
-          label: 'Title',
-        },
-        body: {
-          type: 'input',
-          label: 'Body',
-        },
-      },
-      buttons: [
-        {
-          label: 'simple',
-          type: 'button',
-          classNames: 'btn-block btn-primary',
-          click: { type: 'simple' },
-        },
-        {
-          label: 'success',
-          type: 'button',
-          classNames: 'btn-block btn-success',
-          click: { type: 'success' },
-        },
-        {
-          label: 'info',
-          type: 'button',
-          classNames: 'btn-block btn-info',
-          click: { type: 'info' },
-        },
-        {
-          label: 'warning',
-          type: 'button',
-          classNames: 'btn-block btn-warning',
-          click: { type: 'warning' },
-        },
-        {
-          label: 'error',
-          type: 'button',
-          classNames: 'btn-block btn-danger',
-          click: { type: 'error' },
-        },
-        {
-          label: 'prompt',
-          type: 'button',
-          classNames: 'btn-block btn-secondary',
-          click: { type: 'prompt' },
-        },
-        {
-          label: 'confirm',
-          type: 'button',
-          classNames: 'btn-block btn-dark',
-          click: { type: 'confirm' },
-        },
-      ],
-    }
-  }
-
   handleAction(event) {
-    const cfg = {
-      body: event.payload.body,
-      title: event.payload.title,
-    }
-
     switch (event.type) {
       case 'simple':
-        return this.alerts.notifySimple(cfg)
+        return this.alerts.notifySimple(this.item)
       case 'success':
-        return this.alerts.notifySuccess(cfg)
+        return this.alerts.notifySuccess(this.item)
       case 'error':
-        return this.alerts.notifyError(cfg)
+        return this.alerts.notifyError(this.item)
       case 'info':
-        return this.alerts.notifyInfo(cfg)
+        return this.alerts.notifyInfo(this.item)
       case 'warning':
-        return this.alerts.notifyWarning(cfg)
+        return this.alerts.notifyWarning(this.item)
       case 'prompt':
         const answerYes = (toastId, body) => {
           this.alerts.notifySuccess({ title: 'Yes', body })
@@ -106,7 +96,7 @@ export class DemoNotifyComponent implements OnInit {
           buttons: [{ text: 'Yes', action: answerYes }, { text: 'No', action: answerNo }],
           placeholder: 'Do you want to dismiss this prompt?',
         }
-        return this.alerts.notifyPrompt(Object.assign(cfg, prompt))
+        return this.alerts.notifyPrompt(Object.assign(this.item, prompt))
       case 'confirm':
         const confirmYes = () => this.alerts.notifySuccess({ body: 'Yes' })
         const confirmNo = () => this.alerts.notifyError({ body: 'No' })
@@ -127,7 +117,7 @@ export class DemoNotifyComponent implements OnInit {
             { text: 'Close', action: confirmClose, bold: true },
           ],
         }
-        return this.alerts.notifyConfirm(Object.assign(cfg, confirm))
+        return this.alerts.notifyConfirm(Object.assign(this.item, confirm))
       default: {
         return console.log('Unknown event', event)
       }

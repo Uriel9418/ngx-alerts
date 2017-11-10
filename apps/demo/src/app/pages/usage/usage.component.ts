@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { NgxFormConfig } from '@ngx-plus/ngx-forms'
 
 @Component({
   selector: 'usage',
@@ -57,18 +56,4 @@ export class UsageComponent {
       },
     },
   ]
-
-  item: any = {}
-
-  formConfig: NgxFormConfig = {
-    title: 'My Form',
-    fields: {
-      name: 'input',
-    },
-    buttons: [{ label: 'Save', type: 'submit', classNames: 'btn-primary', click: { type: 'submit' } }],
-  }
-
-  public handleAction(event) {
-    return console.log('$event', event)
-  }
 }

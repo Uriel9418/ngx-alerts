@@ -69,8 +69,6 @@
     "@ngx-plus/ngx-forms": "0.5.0",
     "@nrwl/nx": "0.1.1",
     "ng-snotify": "^4.0.2",
-    "ngx-clipboard": "^8.1.1",
-    "prismjs": "^1.8.4",
     "rxjs": "^5.5.2",
     "sweetalert2": "^6.11.5",
     "zone.js": "^0.8.18"

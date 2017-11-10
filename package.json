@@ -11,7 +11,7 @@
     "url": "https://github.com/ngx-plus/ngx-alerts/issues"
   },
   "private": false,
-  "keywords": ["angular", "angular2", "angular4", "alerts", "ngx-alerts", "ngx-plus", "colmena", "ngx"],
+  "keywords": [ "angular", "angular2", "angular4", "alerts", "ngx-alerts", "ngx-plus", "colmena", "ngx" ],
   "contributors": [
     "Brannon N. Darby II <brannon@ngx.plus> (https://github.com/brannon-darby)",
     "Bram Borggreve <borggreve@gmail.com> (https://github.com/beeman)"
@@ -58,7 +58,8 @@
     "@angular/router": "5.0.1",
     "@nrwl/nx": "0.1.1",
     "ng-snotify": "^4.0.2",
-    "ng2-toasty": "4.0.3",
+    "ngx-clipboard": "^8.1.1",
+    "prismjs": "^1.8.4",
     "rxjs": "^5.5.2",
     "sweetalert2": "^6.11.5",
     "zone.js": "^0.8.18"

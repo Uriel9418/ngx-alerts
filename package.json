@@ -11,14 +11,26 @@
     "url": "https://github.com/ngx-plus/ngx-alerts/issues"
   },
   "private": false,
-  "keywords": [ "angular", "angular2", "angular4", "alerts", "ngx-alerts", "ngx-plus", "colmena", "ngx" ],
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular4",
+    "alerts",
+    "ngx-alerts",
+    "ngx-plus",
+    "colmena",
+    "ngx"
+  ],
   "contributors": [
     "Brannon N. Darby II <brannon@ngx.plus> (https://github.com/brannon-darby)",
     "Bram Borggreve <borggreve@gmail.com> (https://github.com/beeman)"
   ],
   "license": "MIT",
   "lint-staged": {
-    "*.ts": ["npm run format", "git add"]
+    "*.ts": [
+      "npm run format",
+      "git add"
+    ]
   },
   "scripts": {
     "add:contributor": "all-contributors add",
@@ -27,10 +39,8 @@
     "build:libs": "ng-packagr -p libs/ngx-alerts/package.json",
     "clean": "node ./bin/clean",
     "e2e": "ng e2e",
-    "format":
-      "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
-    "ghpages":
-      "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
+    "format": "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
+    "ghpages": "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
     "lint": "ng lint",
     "ng": "ng",
     "now-build": "npm run build:demo",
@@ -56,6 +66,7 @@
     "@angular/platform-browser": "5.0.1",
     "@angular/platform-browser-dynamic": "5.0.1",
     "@angular/router": "5.0.1",
+    "@ngx-plus/ngx-forms": "0.5.0",
     "@nrwl/nx": "0.1.1",
     "ng-snotify": "^4.0.2",
     "ngx-clipboard": "^8.1.1",
@@ -68,14 +79,12 @@
     "@angular/cli": "nrwl/fix-cli-build",
     "@angular/compiler-cli": "5.0.1",
     "@angular/language-service": "5.0.1",
-    "@ngx-plus/ngx-forms": "^0.4.3",
     "@ngx-plus/ngx-logos": "^1.2.1",
     "@nrwl/schematics": "0.1.1",
     "@types/jasmine": "~2.6.3",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.0.50",
     "bootstrap": "^4.0.0-beta.2",
-    "ngx-clipboard": "^8.1.1",
     "codelyzer": "~4.0.1",
     "core-js": "^2.5.1",
     "cpx": "^1.5.0",
@@ -92,6 +101,7 @@
     "lerna": "^2.5.1",
     "lint-staged": "^4.3.0",
     "ng-packagr": "^1.5.0",
+    "ngx-clipboard": "^8.1.1",
     "prettier": "1.8.2",
     "prismjs": "^1.8.4",
     "protractor": "~5.2.0",

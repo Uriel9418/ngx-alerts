@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.2"></a>
+## [0.4.2](https://github.com/ngx-plus/ngx-alerts/compare/v0.4.1...v0.4.2) (2017-11-11)
+
+
+### Bug Fixes
+
+* use generated package.json in prepublish script ([0269d5c](https://github.com/ngx-plus/ngx-alerts/commit/0269d5c))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/ngx-plus/ngx-alerts/compare/v0.4.0...v0.4.1) (2017-11-11)
 
@@ -27,7 +37,3 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **demo:** build demo app using --prod flag ([5dd2539](https://github.com/ngx-plus/ngx-alerts/commit/5dd2539))
 * **publish:** add support for publishing to npm ([b29063e](https://github.com/ngx-plus/ngx-alerts/commit/b29063e))
-
-
-
-

@@ -35,7 +35,7 @@
   "scripts": {
     "add:contributor": "all-contributors add",
     "build": "npm run build:libs && npm run build:demo",
-    "build:demo": "ng build",
+    "build:demo": "ng build --prod",
     "build:libs": "ng-packagr -p libs/ngx-alerts/package.json",
     "clean": "node ./bin/clean",
     "e2e": "ng e2e",

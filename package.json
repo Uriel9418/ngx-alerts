@@ -11,26 +11,14 @@
     "url": "https://github.com/ngx-plus/ngx-alerts/issues"
   },
   "private": false,
-  "keywords": [
-    "angular",
-    "angular2",
-    "angular4",
-    "alerts",
-    "ngx-alerts",
-    "ngx-plus",
-    "colmena",
-    "ngx"
-  ],
+  "keywords": ["angular", "angular2", "angular4", "alerts", "ngx-alerts", "ngx-plus", "colmena", "ngx"],
   "contributors": [
     "Brannon N. Darby II <brannon@ngx.plus> (https://github.com/brannon-darby)",
     "Bram Borggreve <borggreve@gmail.com> (https://github.com/beeman)"
   ],
   "license": "MIT",
   "lint-staged": {
-    "*.ts": [
-      "npm run format",
-      "git add"
-    ]
+    "*.ts": ["npm run format", "git add"]
   },
   "scripts": {
     "add:contributor": "all-contributors add",
@@ -39,8 +27,10 @@
     "build:libs": "ng-packagr -p libs/ngx-alerts/package.json",
     "clean": "node ./bin/clean",
     "e2e": "ng e2e",
-    "format": "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
-    "ghpages": "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
+    "format":
+      "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
+    "ghpages":
+      "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
     "lint": "ng lint",
     "ng": "ng",
     "now-build": "npm run build:demo",
@@ -50,7 +40,7 @@
     "precommit": "lint-staged",
     "preghpages": "ng build --prod --base-href $BASE_HREF",
     "prerelease": "npm run build:libs",
-    "publish": "npm publish dist/libs/ngx-forms",
+    "publish": "npm publish dist/libs/ngx-alerts",
     "release": "standard-version --message \"release: cut v%s\"",
     "start": "ng serve",
     "test": "ng test",

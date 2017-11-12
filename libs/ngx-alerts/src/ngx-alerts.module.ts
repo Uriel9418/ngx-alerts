@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { NgxAlertsService } from './services'
-import { NgxAlertTemplatesComponent } from './components'
+import { NgxAlertsService } from './services/ngx-alerts.service'
+import { NgxAlertTemplatesComponent } from './components/ngx-alert-templates.component'
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify'
 
 const components = [NgxAlertTemplatesComponent]

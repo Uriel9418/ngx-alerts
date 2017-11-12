@@ -1,13 +1,22 @@
 {
   "name": "@ngx-plus/ngx-alerts",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "private": false,
   "description": "Advanced Angular Alerts",
   "contributors": [
     "Brannon N. Darby II <brannon@ngx.plus> (https://github.com/brannon-darby)",
     "Bram Borggreve <borggreve@gmail.com> (https://github.com/beeman)"
   ],
-  "keywords": ["alerts", "angular", "angular2", "angular4", "colmena", "ngx", "ngx-alerts", "ngx-plus"],
+  "keywords": [
+    "alerts",
+    "angular",
+    "angular2",
+    "angular4",
+    "colmena",
+    "ngx",
+    "ngx-alerts",
+    "ngx-plus"
+  ],
   "homepage": "https://github.com/ngx-plus/ngx-alerts#readme",
   "bugs": {
     "url": "https://github.com/ngx-plus/ngx-alerts/issues"
@@ -26,11 +35,9 @@
     "clean": "node ./bin/clean",
     "precommit": "lint-staged",
     "e2e": "ng e2e",
-    "format":
-      "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
+    "format": "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
     "preghpages": "ng build --prod --base-href $BASE_HREF",
-    "ghpages":
-      "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
+    "ghpages": "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
     "lint": "ng lint",
     "ng": "ng",
     "now-build": "npm run build:demo",
@@ -100,6 +107,9 @@
     "@angular/core": "5.0.1"
   },
   "lint-staged": {
-    "*.ts": ["npm run format", "git add"]
+    "*.ts": [
+      "npm run format",
+      "git add"
+    ]
   }
 }

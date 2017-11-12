@@ -1,84 +1,69 @@
 {
   "name": "@ngx-plus/ngx-alerts",
   "version": "0.4.2",
-  "description": "Advanced Angular Alerts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ngx-plus/ngx-alerts.git"
-  },
-  "homepage": "https://github.com/ngx-plus/ngx-alerts#readme",
-  "bugs": {
-    "url": "https://github.com/ngx-plus/ngx-alerts/issues"
-  },
   "private": false,
-  "keywords": [
-    "angular",
-    "angular2",
-    "angular4",
-    "alerts",
-    "ngx-alerts",
-    "ngx-plus",
-    "colmena",
-    "ngx"
-  ],
+  "description": "Advanced Angular Alerts",
   "contributors": [
     "Brannon N. Darby II <brannon@ngx.plus> (https://github.com/brannon-darby)",
     "Bram Borggreve <borggreve@gmail.com> (https://github.com/beeman)"
   ],
+  "keywords": ["alerts", "angular", "angular2", "angular4", "colmena", "ngx", "ngx-alerts", "ngx-plus"],
+  "homepage": "https://github.com/ngx-plus/ngx-alerts#readme",
+  "bugs": {
+    "url": "https://github.com/ngx-plus/ngx-alerts/issues"
+  },
   "license": "MIT",
-  "lint-staged": {
-    "*.ts": [
-      "npm run format",
-      "git add"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngx-plus/ngx-alerts.git"
   },
   "scripts": {
     "add:contributor": "all-contributors add",
     "build": "npm run build:libs && npm run build:demo",
     "build:demo": "ng build --prod",
     "build:libs": "ng-packagr -p libs/ngx-alerts/package.json",
+    "postbuild:libs": "cpx libs/ngx-alerts/src/css/**/*.css dist/libs/ngx-alerts/css",
     "clean": "node ./bin/clean",
+    "precommit": "lint-staged",
     "e2e": "ng e2e",
-    "format": "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
-    "ghpages": "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
+    "format":
+      "prettier --single-quote --no-semi --trailing-comma es5  --print-width 120 --write \"{apps,libs}/**/*.ts\"",
+    "preghpages": "ng build --prod --base-href $BASE_HREF",
+    "ghpages":
+      "npx angular-cli-ghpages --no-silent --repo=https://GH_TOKEN@github.com/$GH_ORG/$GH_REPO.git --name=$GH_NAME --email=$GH_EMAIL --dir=dist/apps/demo",
     "lint": "ng lint",
     "ng": "ng",
     "now-build": "npm run build:demo",
     "now-start": "npx serve demo/dist",
-    "postbuild:libs": "cpx libs/ngx-alerts/src/css/**/*.css dist/libs/ngx-alerts/css",
-    "postrelease": "node bin/prepublish.js && git push --follow-tags",
-    "precommit": "lint-staged",
-    "preghpages": "ng build --prod --base-href $BASE_HREF",
-    "prerelease": "npm run build:libs",
     "publish": "npm publish dist/libs/ngx-alerts",
+    "prerelease": "npm run build:libs",
     "release": "standard-version --message \"release: cut v%s\"",
+    "postrelease": "node bin/prepublish.js && git push --follow-tags",
     "start": "ng serve",
     "test": "ng test",
     "update": "ncu -a"
   },
   "dependencies": {
+    "ng-snotify": "4.0.2",
+    "sweetalert2": "6.11.5"
+  },
+  "devDependencies": {
     "@angular/animations": "5.0.1",
+    "@angular/cli": "nrwl/fix-cli-build",
     "@angular/common": "5.0.1",
     "@angular/compiler": "5.0.1",
+    "@angular/compiler-cli": "5.0.1",
     "@angular/core": "5.0.1",
     "@angular/forms": "5.0.1",
     "@angular/http": "5.0.1",
+    "@angular/language-service": "5.0.1",
     "@angular/platform-browser": "5.0.1",
     "@angular/platform-browser-dynamic": "5.0.1",
     "@angular/router": "5.0.1",
     "@angular/tsc-wrapped": "4.4.6",
     "@ngx-plus/ngx-forms": "0.5.0",
-    "@nrwl/nx": "0.1.1",
-    "ng-snotify": "4.0.2",
-    "rxjs": "5.5.2",
-    "sweetalert2": "6.11.5",
-    "zone.js": "^0.8.18"
-  },
-  "devDependencies": {
-    "@angular/cli": "nrwl/fix-cli-build",
-    "@angular/compiler-cli": "5.0.1",
-    "@angular/language-service": "5.0.1",
     "@ngx-plus/ngx-logos": "^1.2.1",
+    "@nrwl/nx": "0.1.1",
     "@nrwl/schematics": "0.1.1",
     "@types/jasmine": "~2.6.3",
     "@types/jasminewd2": "~2.0.3",
@@ -104,9 +89,17 @@
     "prettier": "1.8.2",
     "prismjs": "^1.8.4",
     "protractor": "~5.2.0",
+    "rxjs": "5.5.2",
     "standard-version": "4.2.0",
     "ts-node": "~3.3.0",
     "tslint": "~5.8.0",
-    "typescript": "2.4.2"
+    "typescript": "2.4.2",
+    "zone.js": "^0.8.18"
+  },
+  "peerDependencies": {
+    "@angular/core": "5.0.1"
+  },
+  "lint-staged": {
+    "*.ts": ["npm run format", "git add"]
   }
 }

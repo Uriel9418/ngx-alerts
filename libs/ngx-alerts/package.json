@@ -1,46 +1,10 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@ngx-plus/ngx-alerts",
-  "description": "Advanced Angular Alerts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ngx-plus/ngx-alerts.git"
-  },
-  "homepage": "https://github.com/ngx-plus/ngx-alerts#readme",
-  "bugs": {
-    "url": "https://github.com/ngx-plus/ngx-alerts/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "private": false,
-  "keywords": [
-    "angular",
-    "angular2",
-    "angular4",
-    "alerts",
-    "ngx-alerts",
-    "ngx-plus",
-    "colmena",
-    "ngx"
-  ],
-  "contributors": [
-    "Brannon N. Darby II <brannon@ngx.plus> (https://github.com/brannon-darby)",
-    "Bram Borggreve <borggreve@gmail.com> (https://github.com/beeman)"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "ng-snotify": "4.0.2",
-    "sweetalert2": "6.11.5"
-  },
   "ngPackage": {
     "lib": {
-      "entryFile": "index.ts",
-      "externals": {
-        "lodash": "lodash"
-      }
+      "entryFile": "index.ts"
     },
-    "src": "libs/ngx-alerts",
     "dest": "dist/libs/ngx-alerts"
   }
 }

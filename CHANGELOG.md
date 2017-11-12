@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.6"></a>
+## [0.4.6](https://github.com/ngx-plus/ngx-alerts/compare/v0.4.4...v0.4.6) (2017-11-12)
+
+
+### Bug Fixes
+
+* **bin:** fix prepublish script ([97e1c82](https://github.com/ngx-plus/ngx-alerts/commit/97e1c82))
+* **ngx-alerts:** fix build and publish scripts ([e10fff0](https://github.com/ngx-plus/ngx-alerts/commit/e10fff0))
+
+
+
 <a name="0.4.5"></a>
 ## [0.4.5](https://github.com/ngx-plus/ngx-alerts/compare/v0.4.4...v0.4.5) (2017-11-12)
 

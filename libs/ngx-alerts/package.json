@@ -3,12 +3,7 @@
   "name": "@ngx-plus/ngx-alerts",
   "ngPackage": {
     "lib": {
-      "entryFile": "index.ts",
-      "externals": {
-        "lodash": "lodash",
-        "ng-snotify": "ng-snotify",
-        "sweetalerts2": "sweetalerts2"
-      }
+      "entryFile": "index.ts"
     },
     "dest": "../../dist/libs/ngx-alerts"
   }

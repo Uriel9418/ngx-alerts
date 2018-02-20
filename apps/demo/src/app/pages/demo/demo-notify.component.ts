@@ -64,7 +64,7 @@ export class DemoNotifyComponent {
     },
     {
       label: 'confirm',
-      classNames: 'btn btn-block btn-dark',
+      classNames: 'btn btn-block btn-light',
       type: 'confirm',
     },
   ]
@@ -93,18 +93,21 @@ export class DemoNotifyComponent {
           this.alerts.notifyDismiss(toastId)
         }
         const prompt = {
-          buttons: [{ text: 'Yes', action: answerYes }, { text: 'No', action: answerNo }],
+          buttons: [
+            { text: 'Yes', action: answerYes },
+            { text: 'No', action: answerNo },
+          ],
           placeholder: 'Do you want to dismiss this prompt?',
         }
         return this.alerts.notifyPrompt(Object.assign(this.item, prompt))
       case 'confirm':
         const confirmYes = () => this.alerts.notifySuccess({ body: 'Yes' })
         const confirmNo = () => this.alerts.notifyError({ body: 'No' })
-        const confirmLater = toastId => {
+        const confirmLater = (toastId) => {
           this.alerts.notifyError({ body: 'Later' })
           this.alerts.notifyDismiss(toastId)
         }
-        const confirmClose = toastId => {
+        const confirmClose = (toastId) => {
           this.alerts.notifyError({ body: 'Close' })
           this.alerts.notifyDismiss(toastId)
         }

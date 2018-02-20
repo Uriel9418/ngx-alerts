@@ -1,40 +1,40 @@
-$simple-bg: #fff;
-$simple-color: #000;
-$simple-progressBar: #c7c7c7;
-$simple-progressBarPercentage: #4c4c4c;
+$simple-bg: $primary;
+$simple-color: lighten($primary, 50%);
+$simple-progressBar: lighten($primary, 25%);
+$simple-progressBarPercentage: lighten($primary, 10%);
 
-$success-bg: #4CAF50;
-$success-color: #C8E6C9;
-$success-progressBar: #388E3C;
-$success-progressBarPercentage: #81c784;
+$success-bg: darken($success, 25%);
+$success-color: $success;
+$success-progressBar: darken($success, 30%);
+$success-progressBarPercentage: darken($success, 15%);
 
-$info-bg: #1e88e5;
-$info-color: #e3f2fd;
-$info-progressBar: #1565c0;
-$info-progressBarPercentage: #64b5f6;
+$info-bg: darken($info, 25%);
+$info-color: $info;
+$info-progressBar: darken($info, 30%);
+$info-progressBarPercentage: darken($info, 15%);
 
-$warning-bg: #ff9800;
-$warning-color: #fff3e0;
-$warning-progressBar: #ef6c00;
-$warning-progressBarPercentage: #ffcc80;
+$warning-bg: darken($warning, 25%);
+$warning-color: $warning;
+$warning-progressBar: darken($warning, 30%);
+$warning-progressBarPercentage: darken($warning, 15%);
 
-$error-bg: #f44336;
-$error-color: #ffebee;
-$error-progressBar: #c62828;
-$error-progressBarPercentage: #ef9a9a;
+$error-bg: lighten($danger, 20%);
+$error-color: $danger;
+$error-progressBar: lighten($danger, 25%);
+$error-progressBarPercentage: lighten($danger, 15%);
 
 $async-bg: $info-bg;
 $async-color: $info-color;
 $async-progressBar: $info-progressBar;
 $async-progressBarPercentage: $info-progressBarPercentage;
 
-$confirm-bg: #009688;
-$confirm-color: #e0f2f1;
-$confirm-progressBar: #4db6ac;
-$confirm-progressBarPercentage: #80cbc4;
+$confirm-bg: darken($light, 25%);
+$confirm-color: $light;
+$confirm-progressBar: darken($light, 30%);
+$confirm-progressBarPercentage: darken($light, 15%);
 
-$prompt-bg: #009688;
-$prompt-color: #e0f2f1;
+$prompt-bg: $secondary;
+$prompt-color: lighten($secondary, 25%);
 
 .snotifyToast {
   display: block;
@@ -93,7 +93,6 @@ $prompt-color: #e0f2f1;
   &__body {
     font-size: 1em;
   }
-
 }
 
 .snotifyToast-show {
@@ -112,26 +111,28 @@ $prompt-color: #e0f2f1;
   animation-name: fadeOutRight;
 }
 
-
 /***************
  ** Modifiers **
  **************/
 
 .snotify-simple {
-  .snotifyToast__title,
-  .snotifyToast__body {
+  .snotifyToast__body,
+  .snotifyToast__title {
     color: $simple-color;
   }
 }
 
 .snotify-success {
   background-color: $success-bg;
+
   .snotifyToast__progressBar {
     background-color: $success-progressBar;
   }
+
   .snotifyToast__progressBar__percentage {
     background-color: $success-progressBarPercentage;
   }
+
   .snotifyToast__body {
     color: $success-color;
   }
@@ -139,41 +140,47 @@ $prompt-color: #e0f2f1;
 
 .snotify-info {
   background-color: $info-bg;
+
   .snotifyToast__progressBar {
     background-color: $info-progressBar;
   }
+
   .snotifyToast__progressBar__percentage {
     background-color: $info-progressBarPercentage;
   }
+
   .snotifyToast__body {
     color: $info-color;
   }
-
 }
 
 .snotify-warning {
   background-color: $warning-bg;
+
   .snotifyToast__progressBar {
     background-color: $warning-progressBar;
   }
+
   .snotifyToast__progressBar__percentage {
     background-color: $warning-progressBarPercentage;
   }
+
   .snotifyToast__body {
     color: $warning-color;
   }
-
-
 }
 
 .snotify-error {
   background-color: $error-bg;
+
   .snotifyToast__progressBar {
     background-color: $error-progressBar;
   }
+
   .snotifyToast__progressBar__percentage {
     background-color: $error-progressBarPercentage;
   }
+
   .snotifyToast__body {
     color: $error-color;
   }
@@ -181,26 +188,31 @@ $prompt-color: #e0f2f1;
 
 .snotify-async {
   background-color: $async-bg;
+
   .snotifyToast__progressBar {
     background-color: $async-progressBar;
   }
+
   .snotifyToast__progressBar__percentage {
     background-color: $async-progressBarPercentage;
   }
+
   .snotifyToast__body {
     color: $async-color;
   }
-
 }
 
 .snotify-confirm {
   background-color: $confirm-bg;
+
   .snotifyToast__progressBar {
     background-color: $confirm-progressBar;
   }
+
   .snotifyToast__progressBar__percentage {
     background-color: $confirm-progressBarPercentage;
   }
+
   .snotifyToast__body {
     color: $confirm-color;
   }
@@ -208,12 +220,15 @@ $prompt-color: #e0f2f1;
 
 .snotify-prompt {
   background-color: $prompt-bg;
+
   ng-snotify-prompt {
     width: 100%;
   }
+
   .snotifyToast__title {
     margin-bottom: 0;
   }
+
   .snotifyToast__body {
     color: $prompt-color;
   }

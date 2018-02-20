@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/ngx-plus/ngx-alerts/compare/v0.5.4...v0.6.0) (2018-02-20)
+
+
+### Features
+
+* **bs4:** update styles to support bootstrap 4 variables ([0d31fb7](https://github.com/ngx-plus/ngx-alerts/commit/0d31fb7))
+
+
+
 <a name="0.5.4"></a>
 ## [0.5.4](https://github.com/ngx-plus/ngx-alerts/compare/v0.5.3...v0.5.4) (2018-02-19)
 
